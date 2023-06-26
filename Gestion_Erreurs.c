@@ -30,3 +30,14 @@ SDL_Renderer* creer_moteur_de_rendu(SDL_Window* fenetre, int index, Uint32 flags
     }
     return renderer;
 }
+
+void erreur(const char* message)
+{
+    fprintf(stderr, "Erreur: %s\n", message);
+    exit(EXIT_FAILURE);
+}
+
+void avertissement(const char* message)
+{
+    fprintf(stderr, "Avertissement: %s\n", message);
+}

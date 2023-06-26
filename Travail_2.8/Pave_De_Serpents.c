@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h> // Inclusion de la bibliothèque SDL2_gfx pour dessiner des formes primitives
-#include "Gestion_Erreurs.c"
+#include "../Gestion_Erreurs.c"
 #include <math.h>
 
 
@@ -79,7 +79,7 @@ int main()
         SDL_Delay(1000 / 60);
 
         // Augmentation de l'angle de rotation pour la prochaine itération
-        rotation += 0.03; // Plus c'est grand plus c'est rapide :)
+        rotation += 0.04; // Plus c'est grand plus c'est rapide :)
 
         // Si la rotation dépasse un tour complet, on la réinitialise
         if (rotation > 2 * M_PI)

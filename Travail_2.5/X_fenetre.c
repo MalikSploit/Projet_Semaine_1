@@ -1,10 +1,9 @@
 #include <SDL2/SDL.h>
-#include "Gestion_Erreurs.c"
+#include "../Gestion_Erreurs.c"
 
-#define LARGEUR_FENETRE 200  // Définition de la largeur de la fenêtre
-#define HAUTEUR_FENETRE 200  // Définition de la hauteur de la fenêtre
-#define NOMBRE_DE_FENETRES 30  // Nombre de fenêtres à créer
-
+#define LARGEUR_FENETRE 200 // Définition de la largeur de la fenêtre
+#define HAUTEUR_FENETRE 200 // Définition de la hauteur de la fenêtre
+#define NOMBRE_DE_FENETRES 30 // Nombre de fenêtres à créer
 
 int main()
 {
