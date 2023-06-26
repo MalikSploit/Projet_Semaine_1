@@ -1,40 +1,10 @@
 #include <SDL2/SDL.h>
+#include "Gestion_Erreurs.c"
 
 #define LARGEUR_FENETRE 200  // Définition de la largeur de la fenêtre
 #define HAUTEUR_FENETRE 200  // Définition de la hauteur de la fenêtre
 #define NOMBRE_DE_FENETRES 30  // Nombre de fenêtres à créer
 
-
-void verifier_initialisation_SDL()
-{
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-        fprintf(stderr, "Erreur lors de l'initialisation de la SDL : %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-}
-
-SDL_Window* creer_fenetre(int x, int y)
-{
-    SDL_Window* fenetre = SDL_CreateWindow("Fenêtre", x, y, LARGEUR_FENETRE, HAUTEUR_FENETRE, 0);
-    if (!fenetre)
-    {
-        fprintf(stderr, "Erreur lors de la création de la fenêtre : %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-    return fenetre;
-}
-
-SDL_Renderer* creer_moteur_de_rendu(SDL_Window* fenetre)
-{
-    SDL_Renderer* renderer = SDL_CreateRenderer(fenetre, -1, 0);
-    if (!renderer)
-    {
-        fprintf(stderr, "Erreur lors de la création du moteur de rendu : %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-    return renderer;
-}
 
 int main()
 {
@@ -63,9 +33,9 @@ int main()
         int position_y_1 = (hauteur_ecran - HAUTEUR_FENETRE) * i / (NOMBRE_DE_FENETRES - 1);
 
         // Création de la fenêtre
-        fenetres[i] = creer_fenetre(position_x_1, position_y_1);
+        fenetres[i] = creer_fenetre(position_x_1, position_y_1, LARGEUR_FENETRE, HAUTEUR_FENETRE);
         // Création du moteur de rendu pour cette fenêtre
-        moteurs_de_rendu[i] = creer_moteur_de_rendu(fenetres[i]);
+        moteurs_de_rendu[i] = creer_moteur_de_rendu(fenetres[i], -1, 0);
         // Définition de la couleur de rendu (noir dans ce cas)
         SDL_SetRenderDrawColor(moteurs_de_rendu[i], 0, 0, 0, 255);
         // Nettoyage de l'écran actuel avec la couleur de rendu
