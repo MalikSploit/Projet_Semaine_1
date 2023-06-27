@@ -9,24 +9,26 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define WINDOW_WIDTH 640
-#define WINDOW_HEIGHT 480
-#define PIPE_WIDTH 80
-#define PIPE_GAP 150
-#define BIRD_SIZE 32
-#define GRAVITY 1
-#define JUMP_FORCE 10
+#define LARGEUR_FENETRE 640  // Définition de la largeur de la fenêtre du jeu
+#define HAUTEUR_FENETRE 480  // Définition de la hauteur de la fenêtre du jeu
+#define LARGEUR_TUYAU 80  // Définition de la largeur d'un tuyau
+#define ESPACE_TUYAU 150  // Définition de l'espace entre les tuyaux
+#define TAILLE_OISEAU 32  // Définition de la taille de l'oiseau
+#define GRAVITE 1  // Définition de la valeur de la gravité pour l'oiseau
+#define FORCE_SAUT 10  // Définition de la valeur de la force de saut pour l'oiseau
 
+// Définition de la structure Tuyau qui contient la position horizontale (x) et la position verticale du départ de l'espace (departEspace)
 typedef struct {
     int x;
-    int spaceStart;
-} Pipe;
+    int departEspace;
+} Tuyau;
 
-void generatePipes();
-void initializeGame();
-void closeGame();
-void updateGame();
-void drawGame();
-void runGame();
+// Prototypes des fonctions du jeu
+void genererTuyaux();
+void initialiserJeu();
+void fermerJeu();
+void mettreAJourJeu();
+void dessinerJeu();
+void executerJeu();
 
 #endif /* ANIMATION_H */

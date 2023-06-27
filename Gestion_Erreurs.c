@@ -9,9 +9,9 @@ void verifier_initialisation_SDL()
     }
 }
 
-SDL_Window* creer_fenetre(int x, int y, int LARGEUR_FENETRE, int HAUTEUR_FENETRE)
+SDL_Window* creer_fenetre(int x, int y, int LARGEUR, int HAUTEUR)
 {
-    SDL_Window* fenetre = SDL_CreateWindow("Fenêtre", x, y, LARGEUR_FENETRE, HAUTEUR_FENETRE, 0);
+    SDL_Window* fenetre = SDL_CreateWindow("Fenêtre", x, y, LARGEUR, HAUTEUR, 0);
     if (!fenetre)
     {
         fprintf(stderr, "Erreur lors de la création de la fenêtre : %s\n", SDL_GetError());
