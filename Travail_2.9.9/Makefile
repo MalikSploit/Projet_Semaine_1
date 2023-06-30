@@ -1,4 +1,4 @@
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -std=c99
 LDFLAGS = -lSDL2 -lSDL2_image -lSDL2_ttf
 
